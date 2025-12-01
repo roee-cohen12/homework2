@@ -5,10 +5,11 @@
 #define MAX_HEALTH 50
 #define CRITICAL_HEALTH -1
 
-int sum_array(int arr[], int length);
 int input_for_ship(int ship[], int length);
 int input_for_hits(bool ship[], int length);
-int run_battle(int ships_health[], bool ship1_hits[], bool ship2_hits[], int length);
+void run_battle(int ships_health[], bool ship1_hits[], bool ship2_hits[],
+    int length);
+bool mini_battle(int ships_health[], bool ship_hits[], int length);
 
 int main() {
     //set ships for battle
@@ -34,22 +35,48 @@ int main() {
         return 0; //there was en error in input
     }
 
-    int battle = run_battle(ships_health_values, ship1_hits, ship2_hits, SHIP_SIZE);
+    run_battle(ships_health_values, ship1_hits, ship2_hits, SHIP_SIZE);
 
 
     return 0;
 }
 
-int run_battle(int ships_health[], bool ship1_hits[], bool ship2_hits[], int length) {
-    int ship1_total_hits = 0;
-    int ship2_total_hits = 0;
+bool mini_battle(int ships_health[], bool ship_hits[], int length) {
+    int sum = 0;
     for (int i = 0; i < length; i++) {
-        if (ship1_hits[i]) {
-            ship1_total_hits += ships_health[i];
+        if (ships_health[i] == CRITICAL_HEALTH && ship_hits[i]) {
+            return true;//ship is down
         }
-        if (ship1_total_hits >= TOTAL_HEALTH) {
+        if (ship_hits[i]) {
+            sum += ships_health[i];//ship hit on that index
+        }
+        if (sum >= TOTAL_HEALTH) {
+            return true;//ship is down
+        }
+    }
+    return false;//ship survived
+}
 
-        }
+void run_battle(int ships_health[], bool ship1_hits[], bool ship2_hits[],
+    int length) {
+
+    bool first_battle_outcome;
+    bool second_battle_outcome;
+    first_battle_outcome = mini_battle(ships_health, ship1_hits, length);
+    second_battle_outcome = mini_battle(ships_health, ship2_hits, length);
+
+    if (first_battle_outcome && second_battle_outcome) {
+        //both ships lost
+        printf("Both ships have lost the battle!\n");
+    } else if (first_battle_outcome && !second_battle_outcome) {
+        //ship1 lost, ship2 survived
+        printf("Ship #2 has won the battle!\n");
+    } else if (!first_battle_outcome && second_battle_outcome) {
+        //ship2 lost, ship1 survived
+        printf("Ship #1 has won the battle!\n");
+    } else {
+        //both ships survived
+        printf("Both ships survived the battle!\n");
     }
 }
 
@@ -89,14 +116,6 @@ int input_for_ship(int ship[], int length) {//scan inputs for battleship
         ship[i] = health_input;//valid input
     }
     return 1;
-}
-
-int sum_array(int arr[], int length) {//sums int array values
-    int sum = 0;
-    for (int i = 0; i < length; i++) {
-        sum += arr[i];
-    }
-    return sum;
 }
 
 
