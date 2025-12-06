@@ -1,0 +1,65 @@
+{
+  "tests": [
+    {
+      "name": "01_ship2_immediate_sink",
+      "input": "10 10 20 20 30 40 50 -1\n1 1 1 1 1 0 0 0\n1 0 0 0 0 0 0 1",
+      "output": "Please enter ship's parts value:\nPlease enter first ship's hit marks:\nPlease enter second ship's hit marks:\nShip #1 has won the battle!\n"
+    },
+    {
+      "name": "02_both_survive",
+      "input": "1 2 3 4 5 6 7 8\n1 1 1 1 1 1 1 1\n1 0 70 0 0 12 0 0",
+      "output": "Please enter ship's parts value:\nPlease enter first ship's hit marks:\nPlease enter second ship's hit marks:\nBoth ships survived the battle!\n"
+    },
+    {
+      "name": "03_invalid_value_out_of_range",
+      "input": "1 2 3 4 5 6 7 80\n",
+      "output": "Please enter ship's parts value:\nThere was an error in input\n"
+    },
+    {
+      "name": "06_ship1_sinks_ship2_survives",
+      "input": "10 20 30 40 0 0 0 0\n1 1 1 1 0 0 0 0\n0 0 0 0 0 0 0 0",
+      "output": "Please enter ship's parts value:\nPlease enter first ship's hit marks:\nPlease enter second ship's hit marks:\nShip #2 has won the battle!\n"
+    },
+    {
+      "name": "09_both_sink_due_to_high_damage",
+      "input": "50 50 50 50 50 50 50 50\n1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1",
+      "output": "Please enter ship's parts value:\nPlease enter first ship's hit marks:\nPlease enter second ship's hit marks:\nBoth ships have lost the battle!\n"
+    },
+    {
+      "name": "10_both_alive_low_damage",
+      "input": "10 10 10 10 10 10 10 10\n1 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0",
+      "output": "Please enter ship's parts value:\nPlease enter first ship's hit marks:\nPlease enter second ship's hit marks:\nBoth ships survived the battle!\n"
+    },
+    {
+      "name": "11_invalid_missing_values",
+      "input": "1 2 3 4 5 6 7\n",
+      "output": "Please enter ship's parts value:\nThere was an error in input\n"
+    },
+    {
+      "name": "12_invalid_extra_values",
+      "input": "1 2 3 4 5 6 7 8 9\n",
+      "output": "Please enter ship's parts value:\nPlease enter first ship's hit marks:\nThere was an error in input\n"
+    },
+    {
+      "name": "13_char_in_input",
+      "input": "50 50 50 50 a 50 50 50\n1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1",
+      "output": "Please enter ship's parts value:\nPlease enter first ship's hit marks:\nPlease enter second ship's hit marks:\nBoth ships have lost the battle!\n"
+    },
+    {
+      "name": "14_char_in_input_2",
+      "input": "50 50 50 50 1 50 50 50\n1 1 a 1 1 1 1 1\n1 1 1 1 1 1 1 1",
+      "output": "Please enter ship's parts value:\nPlease enter first ship's hit marks:\nPlease enter second ship's hit marks:\nBoth ships have lost the battle!\n"
+    },
+    {
+      "name": "15_char_in_input_3",
+      "input": "50 50 50 50 1 50 50 50\n1 1 1 1 1 1 1 1\n1 1 c 1 1 1 1 1",
+      "output": "Please enter ship's parts value:\nPlease enter first ship's hit marks:\nPlease enter second ship's hit marks:\nBoth ships have lost the battle!\n"
+    },
+    {
+      "name": "16_no_\n",
+      "input": "50 50 50 50 50 50 50 50 1 1 1 1 1 1 1 1 1 1 c 1 1 1 1 1",
+      "output": "Please enter ship's parts value:\nPlease enter first ship's hit marks:\nPlease enter second ship's hit marks:\nBoth ships have lost the battle!\n"
+    }
+
+  ]
+}

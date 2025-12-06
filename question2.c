@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdbool.h>
 #define SHIP_SIZE 8
@@ -117,10 +118,3 @@ int input_for_ship(int ship[], int length) {//scan inputs for battleship
     }
     return 1;
 }
-
-
-
-
-
-
-

@@ -1,0 +1,114 @@
+{
+  "tests": [
+    {
+      "name": "01_fox_shift_3",
+      "input": "wkh txlfn eurzq ira\nfox",
+      "output": "3"
+    },
+    {
+      "name": "02_hello_shift_1",
+      "input": "ifmmp xpsme pg qsphsbnnjoh\nhello",
+      "output": "1"
+    },
+    {
+      "name": "03_world_shift_0",
+      "input": "hello world of programming\nworld",
+      "output": "0"
+    },
+    {
+      "name": "04_computer_shift_22",
+      "input": "ykilqpan oyeajya eo wsaokia\ncomputer",
+      "output": "22"
+    },
+    {
+      "name": "05_single_char_shift_1",
+      "input": "b\na",
+      "output": "1"
+    },
+    {
+      "name": "10_rot13_hello",
+      "input": "uryyb jbeyq\nhello",
+      "output": "13"
+    },
+    {
+      "name": "11_plain_at_start_shift_4",
+      "input": "lipps asvph\nhello",
+      "output": "4"
+    },
+    {
+      "name": "13_repeated_letters_shift_8",
+      "input": "pmttw ewztl\nhello",
+      "output": "8"
+    },
+    {
+      "name": "16_many_spaces_shift_2",
+      "input": "jgnnq     yqtnf\nhello",
+      "output": "2"
+    },
+    {
+      "name": "17_no_spaces_shift_6",
+      "input": "way of hello world is\nhello world",
+      "output": "0"
+    },
+    {
+      "name": "18_plain_inside_shift_9",
+      "input": "rovvy zqxp\nhello",
+      "output": "10"
+    },
+    {
+      "name": "19_cipher_repeats_plain_shift_1",
+      "input": "ifmmp ifmmp ifmmp\nhello",
+      "output": "1"
+    },
+    {
+      "name": "21_single_letter_z_to_a_shift_1",
+      "input": "a\nz",
+      "output": "1"
+    },
+    {
+      "name": "22_single_letter_a_to_z_shift_25",
+      "input": "z\na",
+      "output": "25"
+    },
+    {
+      "name": "24_shift_10_noise_spaces",
+      "input": "rovvy     gybvn\nhello",
+      "output": "10"
+    },
+    {
+      "name": "25_shift_15_middle",
+      "input": "wtaad ldgas\nhello",
+      "output": "15"
+    },
+    {
+      "name": "26_shift_5_technion",
+      "input": "yjhmsnts tzw rtsymjw hfjxfwljx\ntechnion",
+      "output": "5"
+    },
+    {
+      "name": "28_shift_24_multiple_words",
+      "input": "fcjjm umpq\nhello",
+      "output": "24"
+    },
+    {
+      "name": "29_spaces",
+      "input": "rovvy \nhello ",
+      "output": "10"
+    },
+    {
+      "name": "30_spaces_before_word",
+      "input": "rovvy \n hello",
+      "output": "10"
+    },
+    {
+      "name": "31_many_spaces",
+      "input": "   rovvy   \n     hello     ",
+      "output": "10"
+    },
+    {
+      "name": "32_spaces_after_word",
+      "input": "rovvy\nhello    ",
+      "output": "10"
+    }
+  ]
+}
